@@ -75,13 +75,6 @@
             overflow: hidden;
         }
 
-        .logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 17px;
-        }
-
         .logo-icon::before {
             content: '';
             position: absolute;
@@ -92,7 +85,6 @@
             background: var(--white);
             border-radius: 50%;
             opacity: 0.3;
-            z-index: 1;
         }
 
         .nav-menu {
@@ -186,50 +178,8 @@
             background: rgba(255,255,255,0.1);
             padding: 1rem;
             border-radius: 8px;
-            margin-top: 1rem;
+            margin-top: 2rem;
             font-style: italic;
-        }
-
-        .contract-address {
-            background: rgba(255,255,255,0.1);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            margin: 2rem auto;
-            max-width: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            border: 2px solid rgba(255,255,255,0.2);
-        }
-
-        .contract-text {
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            color: var(--white);
-            flex: 1;
-        }
-
-        .copy-btn {
-            background: var(--primary-green);
-            color: var(--white);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            min-width: 60px;
-        }
-
-        .copy-btn:hover {
-            background: var(--dark-green);
-            transform: translateY(-1px);
-        }
-
-        .copy-btn:active {
-            transform: translateY(0);
         }
 
         /* Section Styles */
@@ -542,9 +492,7 @@
     <header class="header">
         <div class="nav-container">
             <div class="logo">
-                <div class="logo-icon">
-                    <img src="images/logo.png" alt="Pump.fun University Logo" onerror="this.style.display='none'; this.parentNode.innerHTML='💊';">
-                </div>
+                <div class="logo-icon">💊</div>
                 <div>
                     <div class="serif" style="font-weight: 700; font-size: 1.25rem;">Pump.fun University</div>
                     <div style="font-size: 0.75rem; opacity: 0.8;">Est. 2024</div>
@@ -567,24 +515,16 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-container">
-                <div class="hero-logo animate-fade-in">
-                    <img src="images/logo.png" alt="Pump.fun University Logo" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=&quot;font-size: 4rem; color: white;&quot;>💊</div>';">
-                </div>
-                <h1 class="serif animate-fade-in" style="font-size: 2.5rem;">Higher Education, Lower Liquidity</h1>
-                <p class="tagline animate-fade-in">Where degens come to earn their M.F.A. — Master of Financial Anarchy</p>
+                <h1 class="serif animate-fade-in">Pump.fun University</h1>
+                <p class="tagline animate-fade-in">Higher Education, Lower Liquidity</p>
                 <div class="cta-buttons animate-fade-in">
                     <a href="#" class="btn btn-primary" onclick="applyNow()">Apply Now</a>
                     <a href="#degrees" class="btn btn-secondary" onclick="showPage('degrees')">Explore Degrees</a>
-                    <a href="#" class="btn btn-secondary" onclick="joinTwitter()">Join Twitter</a>
+                    <a href="#" class="btn btn-secondary" onclick="joinDiscord()">Join Discord</a>
                 </div>
-                <div class="contract-address animate-fade-in">
-                    <div class="contract-text">
-                        <strong>CA:</strong> COMING SOON
-                    </div>
-                    <button class="copy-btn" onclick="copyContract()">Copy</button>
-                </div>
-                <div class="accreditation animate-fade-in">
-                    🏆 Officially Unaccredited by the Council of Internet Memes (CIM)
+                <div class="accreditation">
+                    🏆 Officially Unaccredited by the Council of Internet Memes (CIM)<br>
+                    📊 Current Market Cap: $42,069,420 (Enrollment Counter)
                 </div>
             </div>
         </section>
@@ -722,36 +662,28 @@
                     </div>
                     
                     <div class="faculty-card">
-                        <div class="faculty-avatar">
-                            <img src="images/Dean Luna Moon.png" alt="Dean Luna Moon" onerror="this.style.display='none'; this.parentNode.innerHTML='🚀';">
-                        </div>
+                        <div class="faculty-avatar">🚀</div>
                         <h3 class="faculty-name">Dean Luna Moon</h3>
                         <p class="faculty-title">Tokenomics Department Head</p>
                         <p>Survived 23 rugpulls and still believes in "this time it's different." Expert in hopium distribution and community management.</p>
                     </div>
                     
                     <div class="faculty-card">
-                        <div class="faculty-avatar">
-                            <img src="images/Prof. Diamond Handsworth.png" alt="Prof. Diamond Handsworth" onerror="this.style.display='none'; this.parentNode.innerHTML='💎';">
-                        </div>
+                        <div class="faculty-avatar">💎</div>
                         <h3 class="faculty-name">Prof. Diamond Handsworth</h3>
                         <p class="faculty-title">Blockchain Sociology</p>
                         <p>Never sold a single token since 2017. His hands are literally diamond-encrusted from holding through 17 bear markets.</p>
                     </div>
                     
                     <div class="faculty-card">
-                        <div class="faculty-avatar">
-                            <img src="images/Dr. Chart Wizard.png" alt="Dr. Chart Wizard" onerror="this.style.display='none'; this.parentNode.innerHTML='📈';">
-                        </div>
+                        <div class="faculty-avatar">📈</div>
                         <h3 class="faculty-name">Dr. Chart Wizard</h3>
                         <p class="faculty-title">Chart Astrology Specialist</p>
                         <p>Can predict market movements by reading tea leaves and candlestick patterns. Claims to have discovered the "Golden Pepe Formation."</p>
                     </div>
                     
                     <div class="faculty-card">
-                        <div class="faculty-avatar">
-                            <img src="images/Professor Yield Farmer.png" alt="Professor Yield Farmer" onerror="this.style.display='none'; this.parentNode.innerHTML='🌾';">
-                        </div>
+                        <div class="faculty-avatar">🌾</div>
                         <h3 class="faculty-name">Professor Yield Farmer</h3>
                         <p class="faculty-title">Liquidity Farming Expert</p>
                         <p>Grows yield in 47 different protocols simultaneously. His greenhouse is actually a server farm mining governance tokens.</p>
@@ -768,96 +700,22 @@
                 <a href="#home" class="back-btn" onclick="showPage('home')">← Back to Home</a>
                 <h1 class="section-title serif">Campus Life</h1>
                 
-                <div class="degrees-grid">
-                    <div class="degree-card">
-                        <h3 class="degree-title">🎭 Student Organizations</h3>
-                        <div style="text-align: left; margin-top: 1rem; line-height: 1.8;">
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; color: var(--gray);">• Degen Debate Society</div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; color: var(--gray);">• The Rugby Club (Rug-pull survivors)</div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; color: var(--gray);">• Yield Farmers Anonymous</div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; color: var(--gray);">• Diamond Hands Honor Society</div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; color: var(--gray);">• Meme Creation Club</div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; color: var(--gray);">• Bag Holders United</div>
-                        </div>
-                    </div>
-                    
-                    <div class="degree-card">
-                        <h3 class="degree-title">📅 Annual Events</h3>
-                        <div style="text-align: left; margin-top: 1rem; line-height: 1.8;">
-                            <div style="margin-bottom: 0.75rem; padding: 0.25rem 0; color: var(--gray);">
-                                <strong style="color: var(--dark);">Pump Week:</strong> Campus-wide celebration of gains
-                            </div>
-                            <div style="margin-bottom: 0.75rem; padding: 0.25rem 0; color: var(--gray);">
-                                <strong style="color: var(--dark);">Mid-Rug Exams:</strong> Test your survival skills
-                            </div>
-                            <div style="margin-bottom: 0.75rem; padding: 0.25rem 0; color: var(--gray);">
-                                <strong style="color: var(--dark);">Meme Thesis Showcase:</strong> Senior presentations
-                            </div>
-                            <div style="margin-bottom: 0.75rem; padding: 0.25rem 0; color: var(--gray);">
-                                <strong style="color: var(--dark);">Graduation Ceremony:</strong> "To the Moon" procession
-                            </div>
-                            <div style="margin-bottom: 0.75rem; padding: 0.25rem 0; color: var(--gray);">
-                                <strong style="color: var(--dark);">Homecoming:</strong> Return of successful exit liquidity
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="degree-card">
-                        <h3 class="degree-title">🏟️ Campus Facilities</h3>
-                        <div style="text-align: left; margin-top: 1rem; line-height: 1.8;">
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; color: var(--gray);">• The Pump Memorial Library</div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; color: var(--gray);">• Diamond Hands Recreation Center</div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; color: var(--gray);">• Chart Analysis Lab</div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; color: var(--gray);">• Rug Pull Memorial Garden</div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; color: var(--gray);">• The Moon Landing Auditorium</div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; color: var(--gray);">• Degen Dining Hall</div>
-                        </div>
-                    </div>
-                    
-                    <div class="degree-card">
-                        <h3 class="degree-title">🛍️ Campus Store</h3>
-                        <p style="margin-bottom: 1rem; color: var(--gray);">Official Pump.fun University merchandise:</p>
-                        <div style="text-align: left; line-height: 1.8;">
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; display: flex; justify-content: space-between; align-items: center; color: var(--gray);">
-                                <span>• Diamond Hands Hoodies</span>
-                                <strong style="color: var(--dark);">$69</strong>
-                            </div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; display: flex; justify-content: space-between; align-items: center; color: var(--gray);">
-                                <span>• To The Moon Caps</span>
-                                <strong style="color: var(--dark);">$42</strong>
-                            </div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; display: flex; justify-content: space-between; align-items: center; color: var(--gray);">
-                                <span>• Degen Alumni T-Shirts</span>
-                                <strong style="color: var(--dark);">$33</strong>
-                            </div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; display: flex; justify-content: space-between; align-items: center; color: var(--gray);">
-                                <span>• Personalized Diplomas (PDF NFT)</span>
-                                <strong style="color: var(--dark);">$420</strong>
-                            </div>
-                            <div style="margin-bottom: 0.5rem; padding: 0.25rem 0; display: flex; justify-content: space-between; align-items: center; color: var(--gray);">
-                                <span>• Rug Pull Survivor Stickers</span>
-                                <strong style="color: var(--dark);">$1</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Campus Photos -->
-                <h2 style="text-align: center; color: var(--dark); margin: 3rem 0 1rem 0;">Campus Photos</h2>
+                <!-- Campus Gallery -->
                 <div class="campus-gallery">
                     <div class="campus-gallery-item">
                         <img src="images/shitposting.webp" alt="Advanced Shitposting Laboratory" class="campus-image" onerror="this.style.display='none';">
-                        <h4>Shitposting Lab</h4>
-                        <p>Advanced facility for viral content creation and strategic meme deployment.</p>
+                        <h4>Advanced Shitposting Laboratory</h4>
+                        <p>State-of-the-art facility where students master the art of viral content creation and market manipulation through strategic meme deployment.</p>
                     </div>
                     
                     <div class="campus-gallery-item">
                         <img src="images/assets2Ftask_01jwd0rd4be7ramjgn2bkr0xe72F1748488807_img_0.png" alt="Campus Academic Building" class="campus-image" onerror="this.style.display='none';">
-                        <h4>Academic Complex</h4>
-                        <p>Main building with Tokenomics Department and Chart Analysis Labs.</p>
+                        <h4>Main Academic Complex</h4>
+                        <p>Our prestigious main building houses the Department of Tokenomics, Chart Analysis Labs, and the famous Rug Pull Memorial Library.</p>
                     </div>
                 </div>
-            </div>
+                
+                <div class="degrees-grid">
                     <div class="degree-card">
                         <h3 class="degree-title">🎭 Student Organizations</h3>
                         <ul style="text-align: left; margin-top: 1rem;">
@@ -1034,45 +892,11 @@
                 "<a href='https://pump.fun' target='_blank' class='btn btn-primary'>Go to Pump.fun</a>");
         }
 
-        // Join Twitter Function
-        function joinTwitter() {
-            showModal("🐦 Follow Us on Twitter", 
-                "Stay updated with the latest from Pump.fun University!<br><br>" +
-                "<em>Twitter link would go here in a real implementation</em>");
-        }
-
-        // Copy Contract Address Function
-        function copyContract() {
-            const contractText = "COMING SOON";
-            
-            // Try to copy to clipboard
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(contractText).then(() => {
-                    showCopySuccess();
-                }).catch(() => {
-                    showCopyFallback(contractText);
-                });
-            } else {
-                showCopyFallback(contractText);
-            }
-        }
-
-        function showCopySuccess() {
-            const copyBtn = document.querySelector('.copy-btn');
-            const originalText = copyBtn.textContent;
-            copyBtn.textContent = 'Copied!';
-            copyBtn.style.background = '#22c55e';
-            
-            setTimeout(() => {
-                copyBtn.textContent = originalText;
-                copyBtn.style.background = '';
-            }, 2000);
-        }
-
-        function showCopyFallback(text) {
-            showModal("📋 Contract Address", 
-                `Contract Address: <strong>${text}</strong><br><br>` +
-                "<em>Copy this address manually</em>");
+        // Join Discord Function
+        function joinDiscord() {
+            showModal("🎮 Join Our Community", 
+                "Connect with fellow degens in our Discord server!<br><br>" +
+                "<em>Discord link would go here in a real implementation</em>");
         }
 
         // Degree Details Function
