@@ -525,8 +525,11 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-container">
-                <h1 class="serif animate-fade-in">Pump.fun University</h1>
-                <p class="tagline animate-fade-in">Higher Education, Lower Liquidity</p>
+                <div class="hero-logo animate-fade-in">
+                    <img src="images/logo.png" alt="Pump.fun University Logo" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=&quot;font-size: 4rem; color: white;&quot;>💊</div>';">
+                </div>
+                <h1 class="serif animate-fade-in" style="font-size: 2.5rem;">Higher Education, Lower Liquidity</h1>
+                <p class="tagline animate-fade-in">Where degens come to earn their M.F.A. — Master of Financial Anarchy</p>
                 <div class="cta-buttons animate-fade-in">
                     <a href="#" class="btn btn-primary" onclick="applyNow()">Apply Now</a>
                     <a href="#degrees" class="btn btn-secondary" onclick="showPage('degrees')">Explore Degrees</a>
@@ -710,22 +713,71 @@
                 <a href="#home" class="back-btn" onclick="showPage('home')">← Back to Home</a>
                 <h1 class="section-title serif">Campus Life</h1>
                 
-                <!-- Campus Gallery -->
+                <div class="degrees-grid">
+                    <div class="degree-card">
+                        <h3 class="degree-title">🎭 Student Organizations</h3>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Degen Debate Society</li>
+                            <li>The Rugby Club (Rug-pull survivors)</li>
+                            <li>Yield Farmers Anonymous</li>
+                            <li>Diamond Hands Honor Society</li>
+                            <li>Meme Creation Club</li>
+                            <li>Bag Holders United</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="degree-card">
+                        <h3 class="degree-title">📅 Annual Events</h3>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li><strong>Pump Week:</strong> Campus-wide celebration of gains</li>
+                            <li><strong>Mid-Rug Exams:</strong> Test your survival skills</li>
+                            <li><strong>Meme Thesis Showcase:</strong> Senior presentations</li>
+                            <li><strong>Graduation Ceremony:</strong> "To the Moon" procession</li>
+                            <li><strong>Homecoming:</strong> Return of successful exit liquidity</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="degree-card">
+                        <h3 class="degree-title">🏟️ Campus Facilities</h3>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>The Pump Memorial Library</li>
+                            <li>Diamond Hands Recreation Center</li>
+                            <li>Chart Analysis Lab</li>
+                            <li>Rug Pull Memorial Garden</li>
+                            <li>The Moon Landing Auditorium</li>
+                            <li>Degen Dining Hall</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="degree-card">
+                        <h3 class="degree-title">🛍️ Campus Store</h3>
+                        <p>Official Pump.fun University merchandise:</p>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Diamond Hands Hoodies - $69</li>
+                            <li>To The Moon Caps - $42</li>
+                            <li>Degen Alumni T-Shirts - $33</li>
+                            <li>Personalized Diplomas (PDF NFT) - $420</li>
+                            <li>Rug Pull Survivor Stickers - $1</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Campus Photos -->
+                <h2 style="text-align: center; color: var(--dark); margin: 3rem 0 1rem 0;">Campus Photos</h2>
                 <div class="campus-gallery">
                     <div class="campus-gallery-item">
                         <img src="images/shitposting.webp" alt="Advanced Shitposting Laboratory" class="campus-image" onerror="this.style.display='none';">
-                        <h4>Advanced Shitposting Laboratory</h4>
-                        <p>State-of-the-art facility where students master the art of viral content creation and market manipulation through strategic meme deployment.</p>
+                        <h4>Shitposting Lab</h4>
+                        <p>Advanced facility for viral content creation and strategic meme deployment.</p>
                     </div>
                     
                     <div class="campus-gallery-item">
                         <img src="images/assets2Ftask_01jwd0rd4be7ramjgn2bkr0xe72F1748488807_img_0.png" alt="Campus Academic Building" class="campus-image" onerror="this.style.display='none';">
-                        <h4>Main Academic Complex</h4>
-                        <p>Our prestigious main building houses the Department of Tokenomics, Chart Analysis Labs, and the famous Rug Pull Memorial Library.</p>
+                        <h4>Academic Complex</h4>
+                        <p>Main building with Tokenomics Department and Chart Analysis Labs.</p>
                     </div>
                 </div>
-                
-                <div class="degrees-grid">
+            </div>
                     <div class="degree-card">
                         <h3 class="degree-title">🎭 Student Organizations</h3>
                         <ul style="text-align: left; margin-top: 1rem;">
