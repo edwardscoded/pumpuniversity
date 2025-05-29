@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pump.fun University - Higher Education, Lower Liquidity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #4ade80;
+            --dark-green: #22c55e;
+            --navy: #1e3a8a;
+            --accent: #fbbf24;
+            --white: #ffffff;
+            --light-green: #dcfce7;
+            --gray: #6b7280;
+            --dark: #1f2937;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        .serif {
+            font-family: 'Merriweather', serif;
+        }
+
+        /* Header */
+        .header {
+            background: var(--dark);
+            color: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--white);
+            border: 3px solid var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary-green) 100%);
+            color: var(--white);
+            padding: 8rem 0 4rem;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero .tagline {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .accreditation {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-style: italic;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+
+        /* Degrees Grid */
+        .degrees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .degree-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid #e5e7eb;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .degree-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(74, 222, 128, 0.2);
+            border-left-color: var(--dark-green);
+        }
+
+        .degree-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .degree-description {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Faculty Grid */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .faculty-card {
+            text-align: center;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .faculty-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            border: 4px solid var(--light-green);
+        }
+
+        .faculty-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .faculty-title {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--light-green);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Application Form */
+        .application-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .motto {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: var(--primary-green);
+        }
+
+        /* Hidden Content */
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .degrees-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Page specific styles */
+        .page-content {
+            margin-top: 120px;
+            min-height: 60vh;
+        }
+
+        .back-btn {
+            margin-bottom: 2rem;
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-btn:hover {
+            color: var(--primary-green);
+        }
+
+        .course-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .course-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .course-code {
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 15% auto;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .close {
+            color: var(--gray);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: var(--primary-green);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">💊</div>
+                <div>
+                    <div class="serif" style="font-weight: 700; font-size: 1.25rem;">Pump.fun University</div>
+                    <div style="font-size: 0.75rem; opacity: 0.8;">Est. 2024</div>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#degrees" onclick="showPage('degrees')">Degrees</a></li>
+                    <li><a href="#faculty" onclick="showPage('faculty')">Faculty</a></li>
+                    <li><a href="#campus" onclick="showPage('campus')">Campus Life</a></li>
+                    <li><a href="#apply" onclick="showPage('apply')">Apply</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home" class="page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <h1 class="serif animate-fade-in">Pump.fun University</h1>
+                <p class="tagline animate-fade-in">Higher Education, Lower Liquidity</p>
+                <div class="cta-buttons animate-fade-in">
+                    <a href="#" class="btn btn-primary" onclick="applyNow()">Apply Now</a>
+                    <a href="#degrees" class="btn btn-secondary" onclick="showPage('degrees')">Explore Degrees</a>
+                    <a href="#" class="btn btn-secondary" onclick="joinDiscord()">Join Discord</a>
+                </div>
+                <div class="accreditation">
+                    🏆 Officially Unaccredited by the Council of Internet Memes (CIM)<br>
+                    📊 Current Market Cap: $42,069,420 (Enrollment Counter)
+                </div>
+            </div>
+        </section>
+
+        <!-- Degrees Preview -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title serif">Featured Degree Programs</h2>
+                <div class="degrees-grid">
+                    <div class="degree-card">
+                        <h3 class="degree-title">B.S. in Blockchain Sociology</h3>
+                        <p class="degree-description">Dive deep into the social hierarchies of frog PFPs and understand the complex dynamics of Twitter alpha groups.</p>
+                    </div>
+                    <div class="degree-card">
+                        <h3 class="degree-title">M.F.A. in Meme Financial Arts</h3>
+                        <p class="degree-description">Master the sacred art of pump-and-pray investing while creating generational wealth through strategic shitposting.</p>
+                    </div>
+                    <div class="degree-card">
+                        <h3 class="degree-title">PhD in Tokenomics</h3>
+                        <p class="degree-description">0 utility, 100% vibes. Learn to build charts, not products. Prerequisites: Diamond hands and delusion.</p>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <a href="#degrees" class="btn btn-primary" onclick="showPage('degrees')">View All Programs</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section testimonials">
+            <div class="container">
+                <h2 class="section-title serif">What Our Alumni Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"I dropped out with a 10x bag and emotional trauma. Best education I ever received!"</p>
+                        <p class="testimonial-author">- Chad Moonson, Class of '24</p>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">"My mom said I wasted money, but she doesn't understand liquidity pools. Now I'm her financial advisor."</p>
+                        <p class="testimonial-author">- Degen DeMarco, PhD '24</p>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Got rugged and enlightened in the same semester. The duality of pump life."</p>
+                        <p class="testimonial-author">- Luna Tic, M.F.A. '24</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Degrees Page -->
+    <div id="degrees" class="page hidden">
+        <div class="page-content">
+            <div class="container">
+                <a href="#home" class="back-btn" onclick="showPage('home')">← Back to Home</a>
+                <h1 class="section-title serif">Degree Programs</h1>
+                
+                <div class="degrees-grid">
+                    <div class="degree-card" onclick="showDegreeDetails('blockchain-sociology')">
+                        <h3 class="degree-title">B.S. in Blockchain Sociology</h3>
+                        <p class="degree-description">4-year program exploring the social dynamics of decentralized communities and PFP hierarchies.</p>
+                        <p><strong>Duration:</strong> 4 years | <strong>Credits:</strong> 120</p>
+                    </div>
+                    
+                    <div class="degree-card" onclick="showDegreeDetails('meme-arts')">
+                        <h3 class="degree-title">M.F.A. in Meme Financial Arts</h3>
+                        <p class="degree-description">Advanced studies in combining creative expression with financial speculation.</p>
+                        <p><strong>Duration:</strong> 2 years | <strong>Credits:</strong> 60</p>
+                    </div>
+                    
+                    <div class="degree-card" onclick="showDegreeDetails('tokenomics')">
+                        <h3 class="degree-title">PhD in Tokenomics</h3>
+                        <p class="degree-description">Doctoral research in creating value from nothing while maintaining community delusion.</p>
+                        <p><strong>Duration:</strong> 3-7 years | <strong>Credits:</strong> 90</p>
+                    </div>
+                    
+                    <div class="degree-card" onclick="showDegreeDetails('airdrop-sciences')">
+                        <h3 class="degree-title">Associate in Airdrop Sciences</h3>
+                        <p class="degree-description">Specialized curriculum in clicking buttons, tweeting hashtags, and farming rewards.</p>
+                        <p><strong>Duration:</strong> 2 years | <strong>Credits:</strong> 60</p>
+                    </div>
+                    
+                    <div class="degree-card" onclick="showDegreeDetails('rug-psychology')">
+                        <h3 class="degree-title">Bachelor of Rug Pull Psychology</h3>
+                        <p class="degree-description">Study human behavior through the lens of broken dreams and exit liquidity.</p>
+                        <p><strong>Duration:</strong> 4 years | <strong>Credits:</strong> 120</p>
+                    </div>
+                    
+                    <div class="degree-card" onclick="showDegreeDetails('chart-astrology')">
+                        <h3 class="degree-title">Minor in Chart Astrology</h3>
+                        <p class="degree-description">Moon phases, RSI, and your horoscope — perfectly aligned for maximum copium.</p>
+                        <p><strong>Duration:</strong> 1 year | <strong>Credits:</strong> 20</p>
+                    </div>
+                    
+                    <div class="degree-card" onclick="showDegreeDetails('liquidity-farming')">
+                        <h3 class="degree-title">Certificate in Liquidity Farming</h3>
+                        <p class="degree-description">A 6-week intensive course on becoming premium exit liquidity.</p>
+                        <p><strong>Duration:</strong> 6 weeks | <strong>Credits:</strong> 12</p>
+                    </div>
+                    
+                    <div class="degree-card" onclick="showDegreeDetails('degen-trading')">
+                        <h3 class="degree-title">Master of Degen Trading</h3>
+                        <p class="degree-description">Advanced leverage strategies and the art of perfectly timed rugpulls.</p>
+                        <p><strong>Duration:</strong> 18 months | <strong>Credits:</strong> 45</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Faculty Page -->
+    <div id="faculty" class="page hidden">
+        <div class="page-content">
+            <div class="container">
+                <a href="#home" class="back-btn" onclick="showPage('home')">← Back to Home</a>
+                <h1 class="section-title serif">Distinguished Faculty</h1>
+                
+                <div class="faculty-grid">
+                    <div class="faculty-card">
+                        <div class="faculty-avatar">🦍</div>
+                        <h3 class="faculty-name">Professor Rugstein</h3>
+                        <p class="faculty-title">Chair of Rug Pull Psychology</p>
+                        <p>Former hedge fund manager who discovered the joy of exit liquidity. Published 47 papers on "Emotional Manipulation in DeFi Protocols."</p>
+                    </div>
+                    
+                    <div class="faculty-card">
+                        <div class="faculty-avatar">🐸</div>
+                        <h3 class="faculty-name">Dr. Pepe Degenova</h3>
+                        <p class="faculty-title">Professor of Meme Arts</p>
+                        <p>Created the theoretical framework for "Pump Dynamics." His doctoral thesis "Why Frogs Rule the Internet" is required reading.</p>
+                    </div>
+                    
+                    <div class="faculty-card">
+                        <div class="faculty-avatar">🚀</div>
+                        <h3 class="faculty-name">Dean Luna Moon</h3>
+                        <p class="faculty-title">Tokenomics Department Head</p>
+                        <p>Survived 23 rugpulls and still believes in "this time it's different." Expert in hopium distribution and community management.</p>
+                    </div>
+                    
+                    <div class="faculty-card">
+                        <div class="faculty-avatar">💎</div>
+                        <h3 class="faculty-name">Prof. Diamond Handsworth</h3>
+                        <p class="faculty-title">Blockchain Sociology</p>
+                        <p>Never sold a single token since 2017. His hands are literally diamond-encrusted from holding through 17 bear markets.</p>
+                    </div>
+                    
+                    <div class="faculty-card">
+                        <div class="faculty-avatar">📈</div>
+                        <h3 class="faculty-name">Dr. Chart Wizard</h3>
+                        <p class="faculty-title">Chart Astrology Specialist</p>
+                        <p>Can predict market movements by reading tea leaves and candlestick patterns. Claims to have discovered the "Golden Pepe Formation."</p>
+                    </div>
+                    
+                    <div class="faculty-card">
+                        <div class="faculty-avatar">🌾</div>
+                        <h3 class="faculty-name">Professor Yield Farmer</h3>
+                        <p class="faculty-title">Liquidity Farming Expert</p>
+                        <p>Grows yield in 47 different protocols simultaneously. His greenhouse is actually a server farm mining governance tokens.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Campus Life Page -->
+    <div id="campus" class="page hidden">
+        <div class="page-content">
+            <div class="container">
+                <a href="#home" class="back-btn" onclick="showPage('home')">← Back to Home</a>
+                <h1 class="section-title serif">Campus Life</h1>
+                
+                <div class="degrees-grid">
+                    <div class="degree-card">
+                        <h3 class="degree-title">🎭 Student Organizations</h3>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Degen Debate Society</li>
+                            <li>The Rugby Club (Rug-pull survivors)</li>
+                            <li>Yield Farmers Anonymous</li>
+                            <li>Diamond Hands Honor Society</li>
+                            <li>Meme Creation Club</li>
+                            <li>Bag Holders United</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="degree-card">
+                        <h3 class="degree-title">📅 Annual Events</h3>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li><strong>Pump Week:</strong> Campus-wide celebration of gains</li>
+                            <li><strong>Mid-Rug Exams:</strong> Test your survival skills</li>
+                            <li><strong>Meme Thesis Showcase:</strong> Senior presentations</li>
+                            <li><strong>Graduation Ceremony:</strong> "To the Moon" procession</li>
+                            <li><strong>Homecoming:</strong> Return of successful exit liquidity</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="degree-card">
+                        <h3 class="degree-title">🏟️ Campus Facilities</h3>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>The Pump Memorial Library</li>
+                            <li>Diamond Hands Recreation Center</li>
+                            <li>Chart Analysis Lab</li>
+                            <li>Rug Pull Memorial Garden</li>
+                            <li>The Moon Landing Auditorium</li>
+                            <li>Degen Dining Hall</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="degree-card">
+                        <h3 class="degree-title">🛍️ Campus Store</h3>
+                        <p>Official Pump.fun University merchandise:</p>
+                        <ul style="text-align: left; margin-top: 1rem;">
+                            <li>Diamond Hands Hoodies - $69</li>
+                            <li>To The Moon Caps - $42</li>
+                            <li>Degen Alumni T-Shirts - $33</li>
+                            <li>Personalized Diplomas (PDF NFT) - $420</li>
+                            <li>Rug Pull Survivor Stickers - $1</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Page -->
+    <div id="apply" class="page hidden">
+        <div class="page-content">
+            <div class="container">
+                <a href="#home" class="back-btn" onclick="showPage('home')">← Back to Home</a>
+                <h1 class="section-title serif">Apply to Pump.fun University</h1>
+                
+                <div class="application-form">
+                    <h3 style="margin-bottom: 2rem; color: var(--navy);">Admission Application</h3>
+                    <form id="applicationForm">
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="wallet">Wallet Address:</label>
+                            <input type="text" id="wallet" name="wallet" placeholder="Your degenerate address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="strategy">Preferred Trading Strategy:</label>
+                            <select id="strategy" name="strategy">
+                                <option value="yolo">YOLO - All in, no research</option>
+                                <option value="buy-high">Buy High, Sell Higher</option>
+                                <option value="panic">Panic Buy/Sell</option>
+                                <option value="diamond">Diamond Hands Forever</option>
+                                <option value="ape">Ape into Everything</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="iq">Self-Assessed IQ:</label>
+                            <select id="iq" name="iq">
+                                <option value="9000">Over 9000</option>
+                                <option value="420">420</option>
+                                <option value="69">69</option>
+                                <option value="unknown">Unknown (Preferred)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bags">How many bags are you currently holding?</label>
+                            <select id="bags" name="bags">
+                                <option value="0">Zero (Paper Hands)</option>
+                                <option value="1-5">1-5 (Reasonable)</option>
+                                <option value="10-50">10-50 (Diversified Degen)</option>
+                                <option value="100+">100+ (Professional Bag Holder)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience">Rug Pull Experience:</label>
+                            <select id="experience" name="experience">
+                                <option value="virgin">Never been rugged (Virgin)</option>
+                                <option value="1-3">1-3 times (Learning)</option>
+                                <option value="5-10">5-10 times (Experienced)</option>
+                                <option value="lost-count">Lost count (Professor Level)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="essay">Personal Statement (Why do you want to attend Pump.fun University?):</label>
+                            <textarea id="essay" name="essay" rows="4" placeholder="Explain your passion for degen trading and meme economics..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application & Buy $PFUN Token</button>
+                    </form>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem; padding: 1rem; background: var(--light-green); border-radius: 8px;">
+                    <p><strong>Application Fee:</strong> 0.1 SOL + Gas Fees</p>
+                    <p><em>All applications are processed through pump.fun token purchase</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Degree Details Modal -->
+    <div id="degreeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="motto serif">"Pumparum Veritas"</p>
+            <p>&copy; 2024 Pump.fun University. All rights reserved.</p>
+            <p style="margin-top: 1rem; opacity: 0.7;">
+                🎓 Accredited by CIM | 📊 Current Students: 42,069 | 💎 Success Rate: 1.3%
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Page Navigation
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.add('hidden'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.remove('hidden');
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Apply Now Function
+        function applyNow() {
+            // In a real implementation, this would redirect to pump.fun
+            showModal("🚀 Ready to Apply?", 
+                "You're about to be redirected to pump.fun to purchase the $PFUN token. " +
+                "This is how you officially apply to Pump.fun University!<br><br>" +
+                "<a href='https://pump.fun' target='_blank' class='btn btn-primary'>Go to Pump.fun</a>");
+        }
+
+        // Join Discord Function
+        function joinDiscord() {
+            showModal("🎮 Join Our Community", 
+                "Connect with fellow degens in our Discord server!<br><br>" +
+                "<em>Discord link would go here in a real implementation</em>");
+        }
+
+        // Degree Details Function
+        const degreeDetails = {
+            'blockchain-sociology': {
+                title: 'B.S. in Blockchain Sociology',
+                courses: [
+                    'BSOC 101: Introduction to PFP Hierarchies',
+                    'BSOC 201: Twitter Alpha Group Dynamics',
+                    'BSOC 301: Influencer Impact on Market Movements',
+                    'BSOC 401: Senior Thesis: "Why Everyone Changed Their Bio to .eth"'
+                ],
+                professor: 'Prof. Diamond Handsworth',
+                description: 'Study the complex social structures that emerge in decentralized communities.'
+            },
+            'meme-arts': {
+                title: 'M.F.A. in Meme Financial Arts',
+                courses: [
+                    'MFA 101: Fundamentals of Shitposting',
+                    'MFA 201: Advanced Chart Meme Creation',
+                    'MFA 301: Narrative Construction for Pump Campaigns',
+                    'MFA 401: Thesis Project: Original Meme Coin Launch'
+                ],
+                professor: 'Dr. Pepe Degenova',
+                description: 'Combine artistic expression with financial speculation in this interdisciplinary program.'
+            },
+            'tokenomics': {
+                title: 'PhD in Tokenomics',
+                courses: [
+                    'TOK 101: Why Utility is Overrated',
+                    'TOK 201: Psychological Manipulation in Roadmaps',
+                    'TOK 301: Advanced Exit Liquidity Creation',
+                    'TOK 401: Dissertation: "Creating Value from Nothing: A 10,000 Year Study"'
+                ],
+                professor: 'Dean Luna Moon',
+                description: 'The highest degree in understanding how to create billion-dollar valuations from vibes alone.'
+            },
+            'airdrop-sciences': {
+                title: 'Associate in Airdrop Sciences',
+                courses: [
+                    'AIR 101: Button Clicking Fundamentals',
+                    'AIR 201: Strategic Hashtag Usage',
+                    'AIR 301: Multi-Account Management',
+                    'AIR 401: Capstone: Coordinate a Bot Army'
+                ],
+                professor: 'Professor Yield Farmer',
+                description: 'Master the art of farming airdrops across multiple ecosystems.'
+            },
+            'rug-psychology': {
+                title: 'Bachelor of Rug Pull Psychology',
+                courses: [
+                    'RUG 101: Understanding Victim Mentality',
+                    'RUG 201: Hope vs Reality in DeFi',
+                    'RUG 301: Post-Rug Recovery Therapy',
+                    'RUG 401: Senior Project: Survive 10 Consecutive Rugs'
+                ],
+                professor: 'Professor Rugstein',
+                description: 'Comprehensive study of human behavior when faced with inevitable financial loss.'
+            },
+            'chart-astrology': {
+                title: 'Minor in Chart Astrology',
+                courses: [
+                    'CHA 101: Moon Phases and Market Cycles',
+                    'CHA 201: RSI Horoscope Interpretation',
+                    'CHA 301: Crystal Ball Technical Analysis'
+                ],
+                professor: 'Dr. Chart Wizard',
+                description: 'Learn to predict market movements using celestial alignment and copium.'
+            },
+            'liquidity-farming': {
+                title: 'Certificate in Liquidity Farming',
+                courses: [
+                    'LIQ 101: Becoming Premium Exit Liquidity',
+                    'LIQ 201: Advanced FOMO Techniques',
+                    'LIQ 301: Final Project: Get Rugged Professionally'
+                ],
+                professor: 'Professor Yield Farmer',
+                description: 'Intensive 6-week program on how to provide liquidity for others\' gains.'
+            },
+            'degen-trading': {
+                title: 'Master of Degen Trading',
+                courses: [
+                    'DEG 101: 100x Leverage Fundamentals',
+                    'DEG 201: Perfectly Timed Rugpull Execution',
+                    'DEG 301: Advanced Copium Distribution',
+                    'DEG 401: Thesis: "How I Lost Everything and Learned to Love It"'
+                ],
+                professor: 'Dean Luna Moon',
+                description: 'Advanced degree in high-risk, high-reward trading strategies.'
+            }
+        };
+
+        function showDegreeDetails(degreeId) {
+            const degree = degreeDetails[degreeId];
+            if (!degree) return;
+
+            let coursesHTML = degree.courses.map(course => 
+                `<div class="course-item">
+                    <div class="course-code">${course.split(':')[0]}</div>
+                    <div>${course.split(':')[1]}</div>
+                </div>`
+            ).join('');
+
+            const content = `
+                <h2 style="color: var(--dark); margin-bottom: 1rem;">${degree.title}</h2>
+                <p style="margin-bottom: 2rem; font-size: 1.1rem;">${degree.description}</p>
+                <h3 style="color: var(--dark); margin-bottom: 1rem;">Course Curriculum:</h3>
+                <div class="course-list">${coursesHTML}</div>
+                <p style="margin-top: 1.5rem;"><strong>Lead Professor:</strong> ${degree.professor}</p>
+                <div style="margin-top: 2rem;">
+                    <button onclick="applyNow()" class="btn btn-primary">Apply for This Program</button>
+                </div>
+            `;
+
+            showModal("", content);
+        }
+
+        // Modal Functions
+        function showModal(title, content) {
+            const modal = document.getElementById('degreeModal');
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = title ? `<h2>${title}</h2>${content}` : content;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('degreeModal').style.display = 'none';
+        }
+
+        // Application Form Submission
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showModal("🎉 Application Submitted!", 
+                "Congratulations! Your application has been received.<br><br>" +
+                "You will now be redirected to pump.fun to complete your enrollment by purchasing the $PFUN token.<br><br>" +
+                "<a href='https://pump.fun' target='_blank' class='btn btn-primary'>Complete Enrollment</a>");
+        });
+
+        // Easter Egg: Konami Code
+        let konamiCode = [];
+        const targetCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+
+        document.addEventListener('keydown', function(e) {
+            konamiCode.push(e.code);
+            if (konamiCode.length > targetCode.length) {
+                konamiCode.shift();
+            }
+            
+            if (konamiCode.length === targetCode.length && 
+                konamiCode.every((code, index) => code === targetCode[index])) {
+                showModal("🏆 Achievement Unlocked!", 
+                    "Tenured Trader Badge Earned!<br><br>" +
+                    "You've discovered the secret to academic success: persistence in the face of obvious failure.<br><br>" +
+                    "<em>This achievement means nothing, just like your portfolio.</em>");
+                konamiCode = [];
+            }
+        });
+
+        // Click outside modal to close
+        window.onclick = function(event) {
+            const modal = document.getElementById('degreeModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Initialize - show home page
+        showPage('home');
+    </script>
+</body>
+</html>
