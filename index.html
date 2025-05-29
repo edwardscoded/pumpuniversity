@@ -75,6 +75,13 @@
             overflow: hidden;
         }
 
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 17px;
+        }
+
         .logo-icon::before {
             content: '';
             position: absolute;
@@ -85,6 +92,7 @@
             background: var(--white);
             border-radius: 50%;
             opacity: 0.3;
+            z-index: 1;
         }
 
         .nav-menu {
@@ -492,7 +500,9 @@
     <header class="header">
         <div class="nav-container">
             <div class="logo">
-                <div class="logo-icon">💊</div>
+                <div class="logo-icon">
+                    <img src="images/logo.png" alt="Pump.fun University Logo" onerror="this.style.display='none'; this.parentNode.innerHTML='💊';">
+                </div>
                 <div>
                     <div class="serif" style="font-weight: 700; font-size: 1.25rem;">Pump.fun University</div>
                     <div style="font-size: 0.75rem; opacity: 0.8;">Est. 2024</div>
