@@ -264,6 +264,14 @@
             font-size: 2rem;
             color: var(--white);
             border: 4px solid var(--light-green);
+            overflow: hidden;
+        }
+
+        .faculty-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         .faculty-name {
@@ -636,14 +644,18 @@
                 
                 <div class="faculty-grid">
                     <div class="faculty-card">
-                        <div class="faculty-avatar">🦍</div>
+                        <div class="faculty-avatar">
+                            <img src="images/Professor Rugstein.png" alt="Professor Rugstein" onerror="this.style.display='none'; this.parentNode.innerHTML='🦍';">
+                        </div>
                         <h3 class="faculty-name">Professor Rugstein</h3>
                         <p class="faculty-title">Chair of Rug Pull Psychology</p>
                         <p>Former hedge fund manager who discovered the joy of exit liquidity. Published 47 papers on "Emotional Manipulation in DeFi Protocols."</p>
                     </div>
                     
                     <div class="faculty-card">
-                        <div class="faculty-avatar">🐸</div>
+                        <div class="faculty-avatar">
+                            <img src="images/DR. PEPE degenova.png" alt="Dr. Pepe Degenova" onerror="this.style.display='none'; this.parentNode.innerHTML='🐸';">
+                        </div>
                         <h3 class="faculty-name">Dr. Pepe Degenova</h3>
                         <p class="faculty-title">Professor of Meme Arts</p>
                         <p>Created the theoretical framework for "Pump Dynamics." His doctoral thesis "Why Frogs Rule the Internet" is required reading.</p>
@@ -687,6 +699,21 @@
             <div class="container">
                 <a href="#home" class="back-btn" onclick="showPage('home')">← Back to Home</a>
                 <h1 class="section-title serif">Campus Life</h1>
+                
+                <!-- Campus Gallery -->
+                <div class="campus-gallery">
+                    <div class="campus-gallery-item">
+                        <img src="images/shitposting.webp" alt="Advanced Shitposting Laboratory" class="campus-image" onerror="this.style.display='none';">
+                        <h4>Advanced Shitposting Laboratory</h4>
+                        <p>State-of-the-art facility where students master the art of viral content creation and market manipulation through strategic meme deployment.</p>
+                    </div>
+                    
+                    <div class="campus-gallery-item">
+                        <img src="images/assets2Ftask_01jwd0rd4be7ramjgn2bkr0xe72F1748488807_img_0.png" alt="Campus Academic Building" class="campus-image" onerror="this.style.display='none';">
+                        <h4>Main Academic Complex</h4>
+                        <p>Our prestigious main building houses the Department of Tokenomics, Chart Analysis Labs, and the famous Rug Pull Memorial Library.</p>
+                    </div>
+                </div>
                 
                 <div class="degrees-grid">
                     <div class="degree-card">
